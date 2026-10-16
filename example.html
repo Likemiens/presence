@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>presence · example</title>
+  <script src="./presence.js" defer></script>
+  <style>
+    body {
+      box-sizing: border-box;
+      min-height: 100vh;
+      margin: 0;
+      padding: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      gap: 48px 64px;
+      background: #f5f5f5;
+      color: #1c1c1e;
+      font: 15px/1.4 system-ui, sans-serif;
+    }
+    output {
+      flex-basis: 100%;
+      text-align: center;
+      color: #6e6e73;
+    }
+  </style>
+</head>
+<body>
+  <!-- faces and what they are doing -->
+  <lm-presence
+    people='[
+      {"name": "@mila", "avatar": "avatars/mila.svg"},
+      {"name": "@ivan", "avatar": "avatars/ivan.svg"}
+    ]'
+    activity="are on a walk"
+    accent="#f45458"
+  ></lm-presence>
+
+  <!-- a count alone -->
+  <lm-presence count="1240" activity="in the lobby" accent="#f59e0b"></lm-presence>
+
+  <!-- a button: click it, or Tab to it and press Enter -->
+  <lm-presence
+    id="room"
+    people='[
+      {"id": "kai", "name": "@kai", "avatar": "avatars/kai.svg"},
+      {"id": "noor", "name": "@noor", "avatar": "avatars/noor.svg"},
+      {"id": "leo", "name": "@leo", "avatar": "avatars/leo.svg"}
+    ]'
+    count="24"
+    max="3"
+    activity="are watching"
+    accent="#0aa58f"
+    live
+    interactive
+  ></lm-presence>
+
+  <output id="log">Click the last chip.</output>
+
+  <script>
+    document.getElementById("room").addEventListener("lm-select", (event) => {
+      const { people, count } = event.detail;
+      console.log("lm-select", event.detail);
+      document.getElementById("log").textContent = `lm-select: ${count} people, ${people[0].name} first`;
+    });
+  </script>
+</body>
+</html>

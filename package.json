@@ -1,0 +1,36 @@
+{
+  "name": "presence",
+  "version": "1.0.2",
+  "description": "Faces, a head count and what people are doing, in one chip. A dependency-free web component: <lm-presence>.",
+  "license": "MIT",
+  "author": {
+    "name": "Likemiens",
+    "url": "https://github.com/Likemiens"
+  },
+  "homepage": "https://likemiens.com/ui/presence",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Likemiens/presence.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Likemiens/presence/issues"
+  },
+  "private": true,
+  "main": "./presence.js",
+  "types": "./presence.d.ts",
+  "files": [
+    "presence.js",
+    "presence.d.ts"
+  ],
+  "keywords": [
+    "web-component",
+    "custom-element",
+    "presence",
+    "avatars",
+    "avatar-stack",
+    "facepile",
+    "online-status",
+    "live",
+    "widget"
+  ]
+}
