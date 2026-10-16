@@ -1,5 +1,5 @@
 /**
- * Types for <lm-presence> 1.0.2 — https://likemiens.com/ui/presence/
+ * Types for <lm-presence> 1.0.3 — https://likemiens.com/ui/presence/
  * Keep this file anywhere your tsconfig includes; it only adds global types for the element that
  * presence.js registers.
  */
@@ -46,6 +46,17 @@ interface LmPresenceElement extends HTMLElement {
   interactive: boolean;
   disabled: boolean;
   loading: boolean;
+}
+
+interface LmPresenceConstructor {
+  new (): LmPresenceElement;
+  readonly prototype: LmPresenceElement;
+  /** The version of presence.js on the page, "1.0.3". */
+  readonly version: string;
+}
+
+interface CustomElementRegistry {
+  get(name: "lm-presence"): LmPresenceConstructor | undefined;
 }
 
 interface HTMLElementTagNameMap {

@@ -1,8 +1,8 @@
 /*!
- * <lm-presence> 1.0.2
+ * <lm-presence> 1.0.3
  * Faces, a head count and what people are doing, in one chip.
  * Contract and playground: https://likemiens.com/ui/presence/
- * MIT License · Alexandr Varantsov
+ * MIT License © Likemiens
  */
 (() => {
   "use strict";
@@ -19,7 +19,7 @@
     } catch {}
   }
 
-  const VERSION = "1.0.2";
+  const VERSION = "1.0.3";
   const POP = "cubic-bezier(.34, 1.45, .64, 1)";
   const AWAY = "cubic-bezier(.4, 0, 1, 1)";
   const calm = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -27,7 +27,7 @@
   const WORDS = {
     en: {
       and: " & ",
-      others: (n) => ` +${n} others`,
+      others: (n, count) => ` +${n} ${count === 1 ? "other" : "others"}`,
       people: (n, count) => `${n} ${count === 1 ? "person" : "people"}`,
       empty: "No one yet",
       online: "online",
@@ -547,7 +547,7 @@
               ? [[names[0], true]]
               : total === 2 && people.length > 1
                 ? [[names[0], true], [words.and, false], [names[1], true]]
-                : [[names[0], true], [words.others(number.format(total - 1)), false]];
+                : [[names[0], true], [words.others(number.format(total - 1), total - 1), false]];
       this.#label.replaceChildren(
         ...(loading
           ? [node("span", "bar")]

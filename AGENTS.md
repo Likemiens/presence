@@ -1,10 +1,10 @@
 # AGENTS.md
 
-Notes for coding agents adding `<lm-presence>` to a project; people read [README.md](README.md). It is a custom element that shows who is here in one chip: faces and +N in a bubble, a line of names, a line of activity. One classic script, `presence.js` (v1.0.2), no dependencies, MIT; `presence.d.ts` adds global types.
+Notes for coding agents adding `<lm-presence>` to a project; people read [README.md](README.md). It is a custom element that shows who is here in one chip: faces and +N in a bubble, a line of names, a line of activity. One classic script, `presence.js` (v1.0.3), no dependencies, MIT; `presence.d.ts` adds global types.
 
 ## Install
 
-- Any page: `<script src="https://cdn.jsdelivr.net/gh/Likemiens/presence@v1.0.2/presence.js" defer></script>`, then `<lm-presence>` anywhere. Unpinned and always latest: `https://likemiens.com/ui/presence/presence.js`.
+- Any page: `<script src="https://cdn.jsdelivr.net/gh/Likemiens/presence@v1.0.3/presence.js" defer></script>`, then `<lm-presence>` anywhere. Unpinned and always latest: `https://likemiens.com/ui/presence/presence.js`.
 - Bundler: `npm install github:Likemiens/presence`, then `import "presence";` once. It registers the tag and exports nothing; the types come with the import.
 
 ## Contract

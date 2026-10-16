@@ -37,12 +37,12 @@ It is a single Web Component, `<lm-presence>`, with no dependencies: add one `<s
 Paste this anywhere in your HTML:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/Likemiens/presence@v1.0.2/presence.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/Likemiens/presence@v1.0.3/presence.js" defer></script>
 
 <lm-presence
   people='[
-    {"name": "@walentina", "avatar": "https://cdn.jsdelivr.net/gh/Likemiens/presence@v1.0.2/avatars/walentina.svg"},
-    {"name": "@kai", "avatar": "https://cdn.jsdelivr.net/gh/Likemiens/presence@v1.0.2/avatars/kai.svg"}
+    {"name": "@walentina", "avatar": "https://cdn.jsdelivr.net/gh/Likemiens/presence@v1.0.3/avatars/walentina.svg"},
+    {"name": "@kai", "avatar": "https://cdn.jsdelivr.net/gh/Likemiens/presence@v1.0.3/avatars/kai.svg"}
   ]'
   count="12"
   max="3"
@@ -194,14 +194,14 @@ chip.addEventListener("lm-select", (event) => {
   console.log(event.detail); // { people, count }
 });
 
-customElements.get("lm-presence").version; // "1.0.2"
+customElements.get("lm-presence").version; // "1.0.3"
 ```
 
 Set `people` and `count` in the same tick and the chip redraws once. Assign a new array each time: changing `chip.people` in place does not redraw.
 
 ### TypeScript
 
-`presence.d.ts` types the element, `querySelector("lm-presence")` and the `lm-select` event. A bundler picks it up from `import "presence"`; next to a script tag, add `/// <reference path="./presence.d.ts" />`. For JSX, declare the tag once:
+`presence.d.ts` types the element, `querySelector("lm-presence")`, the `lm-select` event and `customElements.get("lm-presence")?.version`. A bundler picks it up from `import "presence"`; next to a script tag, add `/// <reference path="./presence.d.ts" />`. For JSX, declare the tag once:
 
 ```ts
 /// <reference types="presence" />
