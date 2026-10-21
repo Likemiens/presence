@@ -60,11 +60,11 @@ You get two faces and +10 on a violet ring, with "@walentina +11 others" and "ar
 ### With a bundler
 
 ```bash
-npm install github:Likemiens/presence
+npm i github:Likemiens/presence
 ```
 
 ```js
-import "presence"; // registers <lm-presence>
+import "@likemiens/presence"; // registers <lm-presence>
 
 const chip = document.querySelector("lm-presence");
 chip.people = [{ name: "@walentina", avatar: "/avatars/walentina.jpg" }, { name: "@kai" }];
@@ -78,7 +78,7 @@ React 19 passes properties and booleans straight to the element. Events come thr
 
 ```jsx
 import { useEffect, useRef } from "react";
-import "presence";
+import "@likemiens/presence";
 
 export function Presence({ onSelect, ...props }) {
   const ref = useRef(null);
@@ -94,7 +94,7 @@ export function Presence({ onSelect, ...props }) {
 <Presence people={people} count={12} activity="are running" accent="#3b1fd1" interactive onSelect={openRoom} />
 ```
 
-With server rendering (Next.js and the like), load it in the browser only, `useEffect(() => { import("presence"); }, [])`, and pass `people` as a JSON string: a string works even before the element is defined.
+With server rendering (Next.js and the like), load it in the browser only, `useEffect(() => { import("@likemiens/presence"); }, [])`, and pass `people` as a JSON string: a string works even before the element is defined.
 
 ### Vue
 
@@ -201,7 +201,7 @@ Set `people` and `count` in the same tick and the chip redraws once. Assign a ne
 
 ### TypeScript
 
-`presence.d.ts` types the element, `querySelector("lm-presence")`, the `lm-select` event and `customElements.get("lm-presence")?.version`. A bundler picks it up from `import "presence"`; next to a script tag, add `/// <reference path="./presence.d.ts" />`. For JSX, declare the tag once:
+`presence.d.ts` types the element, `querySelector("lm-presence")`, the `lm-select` event and `customElements.get("lm-presence")?.version`. A bundler picks it up from `import "@likemiens/presence"`; next to a script tag, add `/// <reference path="./presence.d.ts" />`. For JSX, declare the tag once:
 
 ```ts
 /// <reference types="presence" />
@@ -231,7 +231,7 @@ Current Chrome, Edge and Firefox, and Safari 16.4 or newer. Where a browser lack
 presence.js     the element: one file, no dependencies
 presence.d.ts   TypeScript types
 example.html    three chips to try it without a build
-avatars/        the demo faces (SVG)
+avatars/        the demo faces
 media/          the cover, the preview and the video
 AGENTS.md       notes for coding agents
 ```

@@ -5,7 +5,7 @@ Notes for coding agents adding `<lm-presence>` to a project; people read [README
 ## Install
 
 - Any page: `<script src="https://cdn.jsdelivr.net/gh/Likemiens/presence@v1.0.3/presence.js" defer></script>`, then `<lm-presence>` anywhere. Unpinned and always latest: `https://likemiens.com/ui/presence/presence.js`.
-- Bundler: `npm install github:Likemiens/presence`, then `import "presence";` once. It registers the tag and exports nothing; the types come with the import.
+- Bundler: `npm i github:Likemiens/presence`, then `import "@likemiens/presence";` once. It registers the tag and exports nothing; the types come with the import.
 
 ## Contract
 
@@ -41,7 +41,7 @@ import { useEffect, useRef } from "react";
 
 export function Presence({ people = [], onSelect, ...props }) {
   const ref = useRef(null);
-  useEffect(() => { import("presence"); }, []); // browser only; registers <lm-presence> once
+  useEffect(() => { import("@likemiens/presence"); }, []); // browser only; registers <lm-presence> once
   useEffect(() => {
     const chip = ref.current;
     const select = (event) => onSelect?.(event.detail);
@@ -53,7 +53,7 @@ export function Presence({ people = [], onSelect, ...props }) {
 }
 ```
 
-Vue 3: `isCustomElement: (tag) => tag.startsWith("lm-")` in the Vue compiler options, `import "presence"` in main.js before `mount()`, then `<lm-presence :people="people" :count="total" interactive @lm-select="open($event.detail)" />`.
+Vue 3: `isCustomElement: (tag) => tag.startsWith("lm-")` in the Vue compiler options, `import "@likemiens/presence"` in main.js before `mount()`, then `<lm-presence :people="people" :count="total" interactive @lm-select="open($event.detail)" />`.
 
 Live updates from a socket:
 

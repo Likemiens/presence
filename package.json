@@ -1,5 +1,5 @@
 {
-  "name": "presence",
+  "name": "@likemiens/presence",
   "version": "1.0.3",
   "description": "Faces, a head count and what people are doing, in one chip. A dependency-free web component: <lm-presence>.",
   "license": "MIT",
@@ -15,7 +15,6 @@
   "bugs": {
     "url": "https://github.com/Likemiens/presence/issues"
   },
-  "private": true,
   "main": "./presence.js",
   "types": "./presence.d.ts",
   "files": [
@@ -32,5 +31,8 @@
     "online-status",
     "live",
     "widget"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
