@@ -60,7 +60,7 @@ You get two faces and +10 on a violet ring, with "@walentina +11 others" and "ar
 ### With a bundler
 
 ```bash
-npm i github:Likemiens/presence
+npm i @likemiens/presence
 ```
 
 ```js

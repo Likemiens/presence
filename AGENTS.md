@@ -5,7 +5,7 @@ Notes for coding agents adding `<lm-presence>` to a project; people read [README
 ## Install
 
 - Any page: `<script src="https://cdn.jsdelivr.net/gh/Likemiens/presence@v1.0.3/presence.js" defer></script>`, then `<lm-presence>` anywhere. Unpinned and always latest: `https://likemiens.com/ui/presence/presence.js`.
-- Bundler: `npm i github:Likemiens/presence`, then `import "@likemiens/presence";` once. It registers the tag and exports nothing; the types come with the import.
+- Bundler: `npm i @likemiens/presence`, then `import "@likemiens/presence";` once. It registers the tag and exports nothing; the types come with the import.
 
 ## Contract
 
